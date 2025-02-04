@@ -3,7 +3,7 @@ import requests
 
 # Web App URLs for Google Apps Scripts
 TOKEN_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/1dl-hkVcgu-Uo8p0QCMYJFSLF3cHYwvVbs6HCLOPrgjZtmgdwF3ZLDkIc/exec"
-SHEET_ID_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/1hwQ7J-bT28_pFIvxppARnu6DHOVAUETglIyDmm5teFy16rUU8IjjqEHk/exec"
+SHEET_ID_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/1Ij0N44PJhUN-jCxsKD5_vX9zsr_I-MxHuPKcj5nHQ0zbZpMFbA2UqS_7/exec"
 
 st.title("🔑 GSC Manager - Tokens & Sheets ID")
 
@@ -35,12 +35,16 @@ if st.button("Save Google Sheets ID"):
     if not sheet_id:
         st.error("❌ Please enter a valid Google Sheets ID!")
     else:
-        sheet_data = {
-            "sheet_id": sheet_id
-        }
+        sheet_data = {"sheet_id": sheet_id}
         response = requests.post(SHEET_ID_SCRIPT_WEBHOOK, json=sheet_data)
 
         if response.status_code == 200:
-            st.success("✅ Google Sheets ID Updated Successfully!")
+            response_text = response.text.strip()
+            if response_text == "Success":
+                st.success("✅ Google Sheets ID Updated Successfully!")
+            elif response_text == "ID already exists":
+                st.warning("⚠️ This Google Sheets ID is already in the list!")
+            else:
+                st.error(f"❌ Unexpected response: {response_text}")
         else:
             st.error(f"❌ Error: {response.text}")
