@@ -1,8 +1,10 @@
-# 🎈 Blank app template
+# GSC Token & Google Sheets ID Manager 🎯
 
-A simple Streamlit app template for you to modify!
+A **Streamlit web application** that allows you to update:
+- **Google Search Console (GSC) Access & Refresh Tokens** ✅
+- **Google Sheets IDs** used for pulling GSC data ✅
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+No need to manually edit Google Apps Scripts! 🚀
 
 ### How to run it on your own machine
 
@@ -15,5 +17,5 @@ A simple Streamlit app template for you to modify!
 2. Run the app
 
    ```
-   $ streamlit run streamlit_app.py
+   $ streamlit run gsc_manager.py
    ```
