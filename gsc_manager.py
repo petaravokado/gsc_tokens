@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 
 # Web App URLs for Google Apps Scripts
-TOKEN_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/YOUR_TOKEN_SCRIPT_ID/exec"
-SHEET_ID_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/YOUR_SHEET_ID_SCRIPT_ID/exec"
+TOKEN_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/1dl-hkVcgu-Uo8p0QCMYJFSLF3cHYwvVbs6HCLOPrgjZtmgdwF3ZLDkIc/exec"
+SHEET_ID_SCRIPT_WEBHOOK = "https://script.google.com/macros/s/1hwQ7J-bT28_pFIvxppARnu6DHOVAUETglIyDmm5teFy16rUU8IjjqEHk/exec"
 
 st.title("🔑 GSC Manager - Tokens & Sheets ID")
 
